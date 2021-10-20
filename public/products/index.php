@@ -20,7 +20,7 @@ $products = $statement->fetchAll(PDO::FETCH_ASSOC);
 <h1>Products CRUD</h1>
 
 <p>
-    <a href="/products/create.php" type="button" class="btn btn-sm btn-success">Add Product</a>
+    <a href="create.php" type="button" class="btn btn-sm btn-success">Add Product</a>
 </p>
 <form action="" method="get">
     <div class="input-group mb-3">
