@@ -16,16 +16,14 @@ $product = $statement->fetch(PDO::FETCH_ASSOC);
 $title = $product['title'];
 $description = $product['description'];
 $price = $product['price'];
-$image = $product['image'];
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     require_once '../../validate_product.php';
-
     if (empty($errors)) {
         $statement = $pdo->prepare("UPDATE products SET title = :title, image = :image, description = :description, price = :price WHERE id = :id");
         
         $statement->bindValue(':title', $title);
-        $statement->bindValue(':image', $image);
+        $statement->bindValue(':image', $imagePath);
         $statement->bindValue(':description', $description);
         $statement->bindValue(':price', $price);
         $statement->bindValue(':id', $id);
